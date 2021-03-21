@@ -61,7 +61,7 @@ copy the provided command in Jenkins master & run in background ---> &
 
 
 
-# Amazonlinux2 & Centos7
+# Ubuntu, Amazonlinux2 & Centos7
 cd /etc/systemd/system/jenkins-service-1.service
 
 [Unit]
