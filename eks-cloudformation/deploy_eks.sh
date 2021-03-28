@@ -18,16 +18,16 @@ node_volume_size="50"
 export Region
 export AWS_DEFAULT_REGION=${Region}
 # Private Subnets
-PrivSubnetAz1=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Private-Subnet-AZ1,Values="${EksCluster}-Private-Subnet-AZ1" | grep "SubnetId" | awk -F['"'] '{print $4}'`
-PrivSubnetAz2=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Private-Subnet-AZ2,Values="${EksCluster}-Private-Subnet-AZ2" | grep "SubnetId" | awk -F['"'] '{print $4}'`
-PrivSubnetAz3=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Private-Subnet-AZ3,Values="${EksCluster}-Private-Subnet-AZ3" | grep "SubnetId" | awk -F['"'] '{print $4}'`
+PrivSubnetAz1=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Private-Subnet-AZ1,Values="${EksCluster}-Private-Subnet-AZ1" | head -n1 | cut -f13`
+PrivSubnetAz2=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Private-Subnet-AZ2,Values="${EksCluster}-Private-Subnet-AZ2" | head -n1 | cut -f13`
+PrivSubnetAz3=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Private-Subnet-AZ3,Values="${EksCluster}-Private-Subnet-AZ3" | head -n1 | cut -f13`
 
 
 
 
-PubSubnetAz1=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Public-Subnet-AZ1,Values="${EksCluster}-Public-Subnet-AZ1" | grep "SubnetId" | awk -F['"'] '{print $4}'`
-PubSubnetAz2=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Public-Subnet-AZ1,Values="${EksCluster}-Public-Subnet-AZ1" | grep "SubnetId" | awk -F['"'] '{print $4}'`
-PubSubnetAz3=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Public-Subnet-AZ3,Values="${EksCluster}-Public-Subnet-AZ3" | grep "SubnetId" | awk -F['"'] '{print $4}'`
+PubSubnetAz1=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Public-Subnet-AZ1,Values="${EksCluster}-Public-Subnet-AZ1" | head -n1 | cut -f13`
+PubSubnetAz2=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Public-Subnet-AZ1,Values="${EksCluster}-Public-Subnet-AZ1" | head -n1 | cut -f13`
+PubSubnetAz3=`aws ec2 describe-subnets --region "${Region}" --filters Name=tag:Public-Subnet-AZ3,Values="${EksCluster}-Public-Subnet-AZ3" | head -n1 | cut -f13`
 
 
 
