@@ -61,12 +61,12 @@ eksctl create cluster \
   --ssh-access \
   --node-volume-size ${node_volume_size} \
   --ssh-public-key ${KEY_NAME} \
+  --appmesh-access \
+  --full-ecr-access \
   --alb-ingress-access \
   --managed \
   --asg-access \
   --verbose 3
-
-
 
 
 
