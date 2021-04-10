@@ -55,12 +55,8 @@ Parameters:
     Description: Name references build template for automation
   Region:
     Type: String
-  Bucket:
+  TransitGatewayID:
     Type: String
-    Default: cloudgeeks-deployment
-  DeployBucketPrefix:
-    Type: String
-    Default: ""
 
   VpcCIDR:
     Type: String
@@ -348,7 +344,7 @@ Resources:
     Properties:
       RouteTableId: !Ref PrivateRouteTable1
       DestinationCidrBlock: 10.0.0.0/8
-      TransitGatewayId: tgw-puttheidoftgwcreatedfrom-other-tgw-template                  # Hard Code
+      TransitGatewayId: !Ref TransitGatewayID                  # Hard Code
     DependsOn: TGWAttachment    
 
    
@@ -382,7 +378,7 @@ Resources:
     Properties:
       RouteTableId: !Ref PrivateRouteTable2
       DestinationCidrBlock: 10.0.0.0/8
-      TransitGatewayId: tgw-puttheidoftgwcreatedfrom-other-tgw-template                  # Hard Code
+      TransitGatewayId: !Ref TransitGatewayID                  # Hard Code
     DependsOn: TGWAttachment     
 
 
@@ -415,7 +411,7 @@ Resources:
     Properties:
       RouteTableId: !Ref PrivateRouteTable3
       DestinationCidrBlock: 10.0.0.0/8
-      TransitGatewayId: tgw-puttheidoftgwcreatedfrom-other-tgw-template                  # Hard Code
+      TransitGatewayId: !Ref TransitGatewayID                  # Hard Code
     DependsOn: TGWAttachment  
   
       
@@ -439,7 +435,7 @@ Resources:
           - !Ref PrivSubnetAz1
           - !Ref PrivSubnetAz2
           - !Ref PrivSubnetAz3
-        TransitGatewayId: tgw-puttheidoftgwcreatedfrom-other-tgw-template                  # Hard Code
+        TransitGatewayId: !Ref TransitGatewayID                  # Hard Code
         VpcId: !Ref Vpc
         Tags:
           - Key: Name
