@@ -36,7 +36,7 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 
 # 2. Move the extracted binary to /usr/bin
 
-mv /tmp/eksctl /usr//bin
+mv /tmp/eksctl /usr/bin
 
 # 3. Test that your installation was successful with the following command.
 eksctl version
