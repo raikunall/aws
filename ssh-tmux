@@ -67,6 +67,13 @@ In tmux, hit the prefix `ctrl+b` and then:
 ## Misc
 
     d  detach
+    
+    Detaching from Tmux sessions
+To detach from a current Tmux session, just press Ctrl+b and d. You don't need to press this both Keyboard shortcut at a time. First press "Ctrl+b" and then press "d".
+    
+    
+    
+    
     t  big clock
     ?  list shortcuts
     :  prompt
