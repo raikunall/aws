@@ -40,6 +40,9 @@ In tmux, hit the prefix `ctrl+b` and then:
 
 ## Windows (tabs)
 
+Opening multiple tabs
+To open a new tab in your current tmux session hit Ctrl + B and then C. After opening a couple of tabs should look like this, with your tabs indicated in the bottom:
+
     c           new window
     ,           name window
     w           list windows
