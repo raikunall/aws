@@ -1,0 +1,9 @@
+# https://www.youtube.com/watch?v=viY1BbKZhSI&ab_channel=StudyZone
+
+git log --online
+
+git rebase -i LogID
+
+<Note: Comment which you do not want or Squashed>
+
+git push origin branchname -f
