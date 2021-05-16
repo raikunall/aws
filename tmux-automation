@@ -49,7 +49,7 @@ exit 0
 # End
 
 
-
+# Ubuntu ---> https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up  ---> vim /etc/rc.local
 
 cd /etc/rc.d
 
