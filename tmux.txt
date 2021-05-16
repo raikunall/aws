@@ -14,5 +14,5 @@
 
 # Dettach from a session
 
-3. tmux detach
+3. tmux detach  ---> CTRL+b
 
