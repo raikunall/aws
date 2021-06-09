@@ -1,12 +1,12 @@
 #!/bin/bash
 # Purpose: Monitoring
-# OS AmazonLinux
+# OS Ubuntu
 # Maintainer DevOps Muhammad Asim <quickbooks2018@gmail.com>
 
 # Docker Installation
-yum install -y docker 2>&1 > /dev/null
-systemctl start docker
-systemctl enable docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh      2>&1 > /dev/null
+rm -rf get-docker.sh
 
 # Docker Compose Installation
 
