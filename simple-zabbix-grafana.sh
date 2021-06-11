@@ -93,6 +93,6 @@ docker restart grafana
 # http://127.0.0.1/zabbix/api_jsonrpc.php # Eg: http://172.31.10.4/zabbix/api_jsonrpc.php
 
 # http://172.31.15.234/zabbix/api_jsonrpc.php
-
+# http://zabbix-web-nginx-mysql:8080/api_jsonrpc.php ---> USE THIS
 # Docker remove all containers
 # docker rm -f $(docker ps -aq)
