@@ -107,6 +107,7 @@ docker run -d \
 
 sysctl -w vm.max_map_count=262144
 echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf
 
 # Example nginx
 # docker run --name nginx -p 8085:80 -id nginx:latest
