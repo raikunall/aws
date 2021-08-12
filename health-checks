@@ -2,7 +2,7 @@
 # Purpose: Application Health Check For Zero Down Time
 
 dns_name="localhost"
-health_check_path="/api"
+health_check_path="/api/v1/users/"
 
 # This IPV4 Address of machine
 echo ""$dns_name""
@@ -12,10 +12,11 @@ echo ""$dns_name""$health_check_path""
 
 
 # Wait Time For Application Up & Running
-wait=600
-echo "Wait Time For Application Up & Running, Please wait $wait sec than Application Health Checks will begin ..."
+wait="600"
+echo "Wait Time For Application Up & Running, Please wait "$wait" sec than Application Health Checks will begin ..."
 # bash while loop
-while [ $wait -gt 0 ]; do
+while [ $wait -gt 0 ]
+do
         sleep 1
         echo $wait
         let wait=wait-1
