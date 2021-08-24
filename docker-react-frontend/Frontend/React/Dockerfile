@@ -14,6 +14,8 @@ WORKDIR /reactjs
 
 COPY myapp .
 
+RUN apt update -y
+
 RUN npm install
 
 
