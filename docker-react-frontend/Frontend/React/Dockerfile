@@ -26,7 +26,7 @@ RUN npm install
 
 RUN npm run build
 
-RUN yarn --network-timeout 100000
+RUN yarn
 
 FROM nginx:latest as runtime
 
