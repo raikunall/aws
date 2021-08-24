@@ -39,6 +39,6 @@ COPY nginx/ /etc/nginx/conf.d/
 
 #4 Copy artifact - static website
 
-COPY --from=build /reactjs .
+COPY --from=builder /reactjs .
 
 #5 entrypoint/cmd already comes with base image (nginx or apache)
