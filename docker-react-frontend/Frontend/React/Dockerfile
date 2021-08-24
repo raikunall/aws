@@ -26,7 +26,7 @@ RUN npm run build
 
 RUN yarn
 
-
+RUN yarn build:staging
 
 
 FROM nginx:latest as runtime
