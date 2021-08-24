@@ -24,9 +24,7 @@ RUN npm install
 
 RUN npm run build
 
-RUN yarn 
-
-RUN yarn build:staging
+RUN yarn
 
 
 
@@ -39,6 +37,6 @@ COPY nginx/ /etc/nginx/conf.d/
 
 #4 Copy artifact - static website
 
-COPY --from=builder /reactjs .
+COPY --from=builder /reactjs/build .
 
 #5 entrypoint/cmd already comes with base image (nginx or apache)
