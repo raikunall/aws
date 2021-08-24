@@ -1,6 +1,6 @@
-FROM node:10.19.0 as build
+FROM node:latest as builder
 
-WORKDIR /var/www/sentimeter
+WORKDIR /reactjs
 
 #1 Install OS Libraries dependencies, if needed
 # PUT HERE
@@ -12,7 +12,7 @@ WORKDIR /var/www/sentimeter
 # COPY package.json .
 
 
-COPY sentimeter-frontend .
+COPY myapp .
 
 RUN npm install
 
@@ -39,6 +39,6 @@ COPY nginx/ /etc/nginx/conf.d/
 
 #4 Copy artifact - static website
 
-COPY --from=build /var/www/sentimeter/build .
+COPY --from=build /reactjs .
 
 #5 entrypoint/cmd already comes with base image (nginx or apache)
