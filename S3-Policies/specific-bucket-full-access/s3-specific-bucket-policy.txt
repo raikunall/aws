@@ -1,5 +1,7 @@
 # Specific Bucket Full Access with AWS Console
 
+# https://aws.amazon.com/premiumsupport/knowledge-center/s3-access-denied-listobjects-sync/
+
 # Note: For AWS Console ---> "s3:ListAllMyBuckets" is MUST
 
 {
