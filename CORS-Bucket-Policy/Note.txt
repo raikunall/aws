@@ -1,4 +1,4 @@
-# Requirement Application Must be only allowed to use the s3 objects.
+# Requirement Application Must be only allowed to use the s3 objects, advantage images will only be available from your application
 1. Make Bucket Public
 2. All Objects Private  ---> Note: if you are able to download it mean object has public read access.
 3. CORS will not work
