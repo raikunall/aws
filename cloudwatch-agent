@@ -1,0 +1,15 @@
+# https://aws.amazon.com/blogs/mt/amazon-ec2-systems-manager-documents-support-for-cross-platform-documents-and-multiple-steps-of-the-same-type/
+
+# https://www.youtube.com/watch?v=z_bUDHUEWUY
+
+# ./amazon-cloudwatch-agent-ctl --help
+
+# https://www.youtube.com/watch?v=vAnIhIwE5hY
+
+# https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-Configuration-File-Details.html
+
+
+amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-linux -s 
+
+
+# https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-Configuration-File-Details.html
