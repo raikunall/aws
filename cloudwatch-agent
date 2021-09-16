@@ -15,6 +15,9 @@ amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-linux
 # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-Configuration-File-Details.html
 
 
+# https://www.youtube.com/watch?v=3k2qqBh0Sns
+
+
 
 
 
