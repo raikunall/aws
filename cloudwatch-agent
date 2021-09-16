@@ -17,7 +17,65 @@ amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-linux
 
 # https://www.youtube.com/watch?v=3k2qqBh0Sns
 
+# https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/installing-cloudwatch-agent-ssm.html
 
+
+##############
+# Memory Linux
+##############
+
+{
+      "agent": {
+        "metrics_collection_interval": 60,
+        "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+      },
+"metrics": {
+    "metrics_collected": {
+      "mem": {
+        "measurement": [
+          {"name": "used", "rename": "MemoryUsed"},
+          {"name": "mem_available", "rename": "MemoryAvailable"}
+        ]
+        }
+      },
+    "append_dimensions": {
+      "InstanceId": "${aws:InstanceId}"
+    }
+  }
+}
+
+
+#################
+# Memory Windows
+#################
+
+{
+  "metrics": {
+    "namespace": "Windows System",
+    "append_dimensions": {
+      "InstanceId": "${aws:InstanceId}"
+    },
+    "aggregation_dimensions" : [ ["InstanceId"] ],
+    "metrics_collected": {
+      "Memory": {
+        "measurement": [
+          {"name": "% Committed Bytes In Use", "rename": "MemoryUsed", "unit": "Bytes"},
+          {"name" : "Available Bytes", "rename": "MemoryAvailable", "unit": "Bytes"}
+        ],
+        "metrics_collection_interval": 60
+      },
+      "Paging File": {
+        "measurement": [
+          {"name": "% Usage", "rename": "paging_used"}
+        ],
+        "metrics_collection_interval": 60,
+        "resources": [
+          "*"
+        ]
+      }
+    }
+  }
+}
 
 
 
