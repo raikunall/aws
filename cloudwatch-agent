@@ -218,7 +218,7 @@ amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-linux
     
     
     ######################
-    # AWS OFFICIAL Custom
+    # AWS OFFICIAL Custom  ############################### -------------------------> USE THIS
     ######################
     
     
