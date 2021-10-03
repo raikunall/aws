@@ -1,0 +1,11 @@
+# https://easylinuxtipsproject.blogspot.com/p/root-command-startup.html
+
+ vim /opt/captain.sh
+ 
+ #!/bin/sh
+ 
+ sleep 5
+ source thisfile
+ 
+ #End
+ 
