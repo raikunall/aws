@@ -5,7 +5,7 @@
  #!/bin/sh
  
  sleep 5
- source thisfile
+ commands
  
  #End
  
