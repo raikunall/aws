@@ -24,7 +24,7 @@ mv ./kind /usr/local/bin
 
 # kind create cluster --name cloudgeeks-ca
 
- kind create cluster --name cloudgeeks-ca --image kindest/node:v1.20.0
+ kind create cluster --name cloudgeeks-ca --image kindest/node:v1.20.7
 
 # kind create cluster --name cloudgeeks-ca --image kindest/node:v1.19.0
 
