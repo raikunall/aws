@@ -34,6 +34,8 @@ mv ./kind /usr/local/bin
 
 # kubectl cluster-info --context kind-cloudgeeks-ca
 
+# End
+
 # kind delete cluster --name kind-cloudgeeks-ca
 
 # Delete a cluster ---> docker rm -f $(docker ps -aq)
