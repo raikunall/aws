@@ -338,3 +338,146 @@ amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-linux
         "force_flush_interval" : 15
       }
     }
+
+
+#########################
+# AWS Custom Cloudwatch
+#########################
+
+
+● amazon-cloudwatch-agent.service - Amazon CloudWatch Agent
+     Loaded: loaded (/etc/systemd/system/amazon-cloudwatch-agent.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2021UTC; 1 day 12h ago
+   Main PID: 2613 (amazon-cloudwat)
+      Tasks: 10 (limit: 9185)
+     Memory: 28.6M
+     CGroup: /system.slice/amazon-cloudwatch-agent.service
+             └─2613 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml -e>
+
+systemd[1]: Started Amazon CloudWatch Agent.
+start-amazon-cloudwatch-agent[2613]: /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json does not exist or cannot>
+start-amazon-cloudwatch-agent[2613]: Valid Json input schema.
+start-amazon-cloudwatch-agent[2613]: I! Detecting run_as_user...
+
+#######
+# Steps
+#######
+
+vim /etc/systemd/system/amazon-cloudwatch-agent.service
+
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml
+
+##############################
+# Note: Update the instace-id
+##############################
+
+vim /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml
+
+[agent]
+  collection_jitter = "0s"
+  debug = false
+  flush_interval = "1s"
+  flush_jitter = "0s"
+  hostname = ""
+  interval = "60s"
+  logfile = "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+  logtarget = "lumberjack"
+  metric_batch_size = 1000
+  metric_buffer_limit = 10000
+  omit_hostname = false
+  precision = ""
+  quiet = false
+  round_interval = false
+
+[inputs]
+
+  [[inputs.disk]]
+    fieldpass = ["used_percent"]
+    tagexclude = ["mode"]
+    [inputs.disk.tags]
+      metricPath = "metrics"
+
+  [[inputs.logfile]]
+    destination = "cloudwatchlogs"
+    file_state_folder = "/opt/aws/amazon-cloudwatch-agent/logs/state"
+
+    [[inputs.logfile.file_config]]
+      file_path = "/var/log/cfn-hup.log"
+      from_beginning = true
+      log_group_name = "Cloudgeeks-Production-CloudWatchLogs"
+      log_stream_name = "i-035e8b835851a7ea9/cfn-hup.log"
+      pipe = false
+      timezone = "UTC"
+
+    [[inputs.logfile.file_config]]
+      file_path = "/var/log/cfn-init.log"
+      from_beginning = true
+      log_group_name = "Cloudgeeks-Production-CloudWatchLogs"
+      log_stream_name = "i-035e8b835851a7ea9/cfn-init.log"
+      pipe = false
+      timezone = "UTC"
+
+    [[inputs.logfile.file_config]]
+      file_path = "/var/log/cfn-init-cmd.log"
+      from_beginning = true
+      log_group_name = "Cloudgeeks-Production-CloudWatchLogs"
+      log_stream_name = "i-035e8b835851a7ea9/cfn-init-cmd.log"
+      pipe = false
+      timezone = "UTC"
+
+    [[inputs.logfile.file_config]]
+      file_path = "/var/log/cloud-init.log"
+      from_beginning = true
+      log_group_name = "Cloudgeeks-Production-CloudWatchLogs"
+      log_stream_name = "i-035e8b835851a7ea9/cloud-init.log"
+      pipe = false
+      timezone = "UTC"
+
+    [[inputs.logfile.file_config]]
+      file_path = "/var/log/cloud-init-output.log"
+      from_beginning = true
+      log_group_name = "Cloudgeeks-Production-CloudWatchLogs"
+      log_stream_name = "i-035e8b835851a7ea9/cloud-init-output.log"
+      pipe = false
+      timezone = "UTC"
+
+    [[inputs.logfile.file_config]]
+      file_path = "/var/log/cfn-wire.log"
+      from_beginning = true
+      log_group_name = "Cloudgeeks-Production-CloudWatchLogs"
+      log_stream_name = "i-035e8b835851a7ea9/cfn-wire.log"
+      pipe = false
+      timezone = "UTC"
+    [inputs.logfile.tags]
+      metricPath = "logs"
+
+  [[inputs.mem]]
+    fieldpass = ["used_percent"]
+    [inputs.mem.tags]
+      metricPath = "metrics"
+
+[outputs]
+
+  [[outputs.cloudwatch]]
+    force_flush_interval = "60s"
+    namespace = "CWAgent"
+    region = "us-east-1"
+    tagexclude = ["host", "metricPath"]
+    [outputs.cloudwatch.tagpass]
+      metricPath = ["metrics"]
+
+  [[outputs.cloudwatchlogs]]
+    force_flush_interval = "5s"
+    log_stream_name = "i-035e8b835851a7ea9"
+    region = "us-east-1"
+    tagexclude = ["metricPath"]
+    [outputs.cloudwatchlogs.tagpass]
+      metricPath = ["logs"]
+
+[processors]
+
+  [[processors.ec2tagger]]
+    ec2_metadata_tags = ["InstanceId"]
+    refresh_interval_seconds = "0s"
+    [processors.ec2tagger.tagpass]
+      metricPath = ["metrics"]
