@@ -481,3 +481,21 @@ vim /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml
     refresh_interval_seconds = "0s"
     [processors.ec2tagger.tagpass]
       metricPath = ["metrics"]
+      
+      
+      
+      
+      
+# systemctl daemon-reload
+
+# systemctl restart amazon-cloudwatch-agent
+
+# systemctl enable amazon-cloudwatch-agent
+
+
+
+
+# Automation
+
+INSTANCE_ID=$(aws ec2 describe-instances --filters --query "Reservations[].Instances[].InstanceId" --region us-east-1 | awk -F '["]' '{print $2}')
+
