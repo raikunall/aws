@@ -1,3 +1,6 @@
+#!/bin/bash
+# Purpose: AmazonCloudWatch Agent Automated Installation
+
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify_ec2_instances.html
 
 yum install -y amazon-cloudwatch-agent
