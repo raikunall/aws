@@ -33,5 +33,24 @@ mv ./kind /usr/local/bin
 
 
  kubectl cluster-info --context kind-cloudgeeks-ca
+ 
+ 
+###################
+# Create Deployment
+###################
+# kubectl create deployment <Deplyment-Name> --image=<Container-Image>
+# kubectl create deployment blue-deployment --image=quickbooks2018/blue
+
+######################
+# Scaling a Deployment
+######################
+# kubectl scale --replicas=3 deployment/<Deployment-Name>
+# kubectl scale --replicas=3 deployment/blue-deployment
+
+#################################
+# Expose Deployment as a Service
+#################################
+# kubectl expose deployment <Deployment-Name>  --type=NodePort --port=80 --target-port=80 --name=<Service-Name-To-Be-Created>
+# kubectl expose deployment blue-deployment --type=NodePort --port=80 --target-port=80 --name=blue-service
 
 #END
