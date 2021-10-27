@@ -2,6 +2,9 @@
 # Purpose: Kubernetes Cluster
 # https://hub.docker.com/r/kindest/node/tags
 # https://hub.docker.com/r/kindest/node
+# https://hub.docker.com/u/kindest
+# https://hub.docker.com/r/kindest/node/tags
+
 
 #######################
 # Kubectl Installation
@@ -33,9 +36,6 @@ curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.9.0/kind-$(uname)-amd64"
 chmod +x ./kind
 mv ./kind /usr/local/bin
 
-#########################################################################
-# https://hub.docker.com/u/kindest
-# https://hub.docker.com/r/kindest/node/tags
 
 # kind create cluster --name cloudgeeks-ca
 
