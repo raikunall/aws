@@ -76,6 +76,11 @@ mv ./kind /usr/local/bin
 # kubectl expose deployment <Deployment-Name>  --type=NodePort --port=80 --target-port=80 --name=<Service-Name-To-Be-Created>
 # kubectl expose deployment blue-deployment --type=NodePort --port=80 --target-port=80 --name=blue-service
 
+###############
+# Port Forward
+###############
+# kubectl port-forward service/blue-service --address 0.0.0.0 11000:80 -n default
+
 
 ###############
 # AmazonLinux      # ---> do not use it for KIND
