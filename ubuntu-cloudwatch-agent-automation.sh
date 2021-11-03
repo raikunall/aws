@@ -4,7 +4,7 @@
 # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/download-cloudwatch-agent-commandline.html
 
 ############################################################
-# Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE
+# Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE + YOUR REGION us-east-1
 ############################################################
 
 
