@@ -2,6 +2,10 @@
 # Purpose: AmazonCloudWatch Agent Automated Installation
 # OS: AmazonLinux
 
+############################################################
+# Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE
+############################################################
+
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify_ec2_instances.html
 
 yum install -y amazon-cloudwatch-agent
