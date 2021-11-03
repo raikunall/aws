@@ -3,6 +3,10 @@
 # OS: Ubuntu
 # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/download-cloudwatch-agent-commandline.html
 
+############################################################
+# Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE
+############################################################
+
 
 # https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 
