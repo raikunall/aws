@@ -1,5 +1,6 @@
 #!/bin/bash
 # Purpose: AmazonCloudWatch Agent Automated Installation
+# OS: AmazonLinux
 
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify_ec2_instances.html
 
