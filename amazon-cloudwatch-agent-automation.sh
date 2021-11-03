@@ -3,7 +3,7 @@
 # OS: AmazonLinux
 
 ############################################################
-# Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE
+# Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE + YOUR REGION us-east-1
 ############################################################
 
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify_ec2_instances.html
