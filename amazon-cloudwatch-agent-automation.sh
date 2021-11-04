@@ -1,6 +1,9 @@
 #!/bin/bash
 # Purpose: AmazonCloudWatch Agent Automated Installation
 # OS: AmazonLinux
+# https://aws.amazon.com/blogs/mt/create-amazon-ec2-auto-scaling-policy-memory-utilization-metric-linux/
+# https://awswithatiq.com/cloudwatch-to-monitor-memory-disk-and-access-log/
+
 
 ############################################################
 # Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE + YOUR REGION us-east-1
@@ -130,6 +133,44 @@ LINE_OLD='/opt/aws/amazon-cloudwatch-agent/bin/start-amazon-cloudwatch-agent'
 LINE_NEW='/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml'
 
 sed -i "s%$LINE_OLD%$LINE_NEW%g"  /etc/systemd/system/amazon-cloudwatch-agent.service
+
+
+systemctl daemon-reload
+
+systemctl start amazon-cloudwatch-agent
+
+systemctl enable amazon-cloudwatch-agent
+
+
+
+# # In case of Auto-Scaling Group Memory
+
+cat << EOF /opt/aws/amazon-cloudwatch-agent/bin/config.json
+{
+        "agent": {
+                "metrics_collection_interval": 60
+        },
+        "metrics": {
+                "namespace": "ASG_Memory",
+                "append_dimensions": {
+                        "AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+                        "InstanceId": "${aws:InstanceId}"
+                },
+                "aggregation_dimensions" : [["AutoScalingGroupName"]],
+                "metrics_collected": {
+                        "mem": {
+                                "measurement": [
+                                         {"name": "mem_used_percent", "rename": "MemoryUtilization", "unit": "Percent"}
+                                ],
+                                "metrics_collection_interval": 60
+                        }
+                }
+        }
+}
+
+EOF
+
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
 
 systemctl daemon-reload
 
