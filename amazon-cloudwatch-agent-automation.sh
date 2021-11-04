@@ -143,7 +143,7 @@ systemctl enable amazon-cloudwatch-agent
 
 
 
-# # In case of Auto-Scaling Group Memory
+# In case of Auto-Scaling Group Memory
 
 cat << EOF /opt/aws/amazon-cloudwatch-agent/bin/config.json
 {
