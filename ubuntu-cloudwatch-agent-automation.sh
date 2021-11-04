@@ -128,7 +128,7 @@ systemctl enable amazon-cloudwatch-agent
 
 # In case of Auto-Scaling Group Memory
 
-cat << EOF /opt/aws/amazon-cloudwatch-agent/bin/config.json
+cat << EOF > /opt/aws/amazon-cloudwatch-agent/bin/config.json
 {
         "agent": {
                 "metrics_collection_interval": 60
@@ -150,6 +150,7 @@ cat << EOF /opt/aws/amazon-cloudwatch-agent/bin/config.json
                 }
         }
 }
+
 EOF
 
 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
