@@ -2,6 +2,7 @@
 # Purpose: Quick Setup of AmazonCloudWatch Agent
 # OS: Ubuntu
 # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/download-cloudwatch-agent-commandline.html
+# https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html
 
 ############################################################
 # Note: arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy     # Attach this policy to ROLE + YOUR REGION us-east-1
