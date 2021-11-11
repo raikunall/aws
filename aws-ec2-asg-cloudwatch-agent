@@ -125,7 +125,6 @@ cat << EOF > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml
 
 EOF
 
-# https://stackoverflow.com/questions/10309968/sed-search-and-replace-strings-containing
 LINE_OLD='/opt/aws/amazon-cloudwatch-agent/bin/start-amazon-cloudwatch-agent'
 LINE_NEW='/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml'
 
