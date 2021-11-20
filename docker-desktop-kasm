@@ -12,6 +12,12 @@
 
 docker run --name kasmweb-desktop -u root --shm-size=2048m -p 6901:6901 -e VNC_PW=password -id kasmweb/desktop:1.10.0
 
+##################
+# DevOps Packages
+##################
+
+https://github.com/quickbooks2018/eks-redmin/blob/master/packages.sh
+
 
 ########
 # Chrome   # Only Chrome
