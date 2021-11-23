@@ -12,7 +12,7 @@
 # Full Desktop with Application
 ################################
 
-docker run --name kasmweb-desktop -u root --shm-size=2048m -p 6901:6901 -e VNC_PW=password -id kasmweb/desktop:1.10.0-rolling
+docker run --name kasmweb-desktop --shm-size=2048m -p 6901:6901 -e VNC_PW=password -id kasmweb/desktop:1.10.0-rolling
 
 ##################
 # DevOps Packages
