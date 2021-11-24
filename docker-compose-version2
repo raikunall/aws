@@ -1,5 +1,6 @@
 # https://docs.docker.com/compose/cli-command/
 # https://docs.docker.com/compose/profiles/
+# https://github.com/EugenMayer/docker-image-atlassian-jira/blob/master/docker-compose.yml
 
 #########################################################################################
 # 1 Run the following command to download the current stable release of Docker Compose
