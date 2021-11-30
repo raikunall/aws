@@ -1,7 +1,7 @@
 #!/bin/bash
 #Define the domain name
 
-DOMAIN='cloudgeeks.ca.com'
+DOMAIN='cloudgeeks.ca'
 SUBDOMAIN='vpn'
 
 #Organization Details
