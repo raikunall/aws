@@ -1,6 +1,6 @@
 #!/bin/bash
-#Aurthor: Muhammad Asim
-#Purpose: Setup OpenVPN in quick time.
+# Author: Muhammad Asim
+# Purpose: Setup OpenVPN in quick time.
 
 # Docker Installation for Ubuntu
 #sudo apt update -y > /dev/null
