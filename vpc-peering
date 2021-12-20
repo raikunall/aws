@@ -31,3 +31,26 @@ resource "aws_route" "r" {
   destination_cidr_block         = var.main_vpc_cidr
   vpc_peering_connection_id = aws_vpc_peering_connection.main_vpc.id
 }
+
+
+locals {
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
+}
+
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "2.66.0"
+
+  name                 = ...
+  cidr                 = "10.0.0.0/16"
+  azs                  = data.aws_availability_zones.available.names
+  private_subnets      = local.private_subnets
+  enable_dns_hostnames = true
+  ...
+}
+
+resource "aws_route" "foo" {
+  count                     = length(local.private_subnets)
+  route_table_id = module.vpc.private_route_table_ids[count.index]
+  destination_cidr_block    = var.peered_cidr
+  vpc_peering_connection_id = aws_vpc_peering_connection.bar.id
