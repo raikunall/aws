@@ -1,0 +1,23 @@
+# aws postgresql rds
+
+# https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html
+
+
+psql \
+   --host=<DB instance endpoint> \
+   --port=<port> \
+   --username=<master username> \
+   --password \
+   --dbname=<database name> 
+
+######################
+# postgres CLI Client
+######################
+
+docker run --name postgres -e POSTGRES_PASSWORD=password -id postgres
+
+psql --host=cloudgeeks-postgres-us-east-1.rds.amazonaws.com --port=5432 --username=dbadmin  --password --dbname=postgres
+
+# List databases
+
+\l
