@@ -25,3 +25,26 @@ node_groups = {
     }
   }
 }
+
+
+# https://github.com/terraform-aws-modules/terraform-aws-eks/issues/1214
+
+ node_groups = {
+    prometheus = {
+      create_launch_template = true
+
+      desired_capacity   = 1
+      max_capacity       = 2
+      min_capacity       = 1
+      instance_types     = ["c5.xlarge", "c4.xlarge"]
+      capacity_type      = "SPOT"
+      disk_type          = "gp2"
+      disk_size          = 20
+      kubelet_extra_args = "--register-with-taints=dedicated=prometheus:NoSchedule"
+      additional_tags    = var.prometheus_mng_additional_tags
+      k8s_labels         = {
+        "role" = "worker"
+        "group" = "prometheus"
+      }
+    }
+  }
