@@ -90,3 +90,114 @@
         }
     ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "Statement": [
+        {
+            "Action": [
+                "iam:ListUsers",
+                "iam:GetAccountPasswordPolicy",
+                "iam:ListVirtualMFADevices"
+            ],
+            "Effect": "Allow",
+            "Resource": "*",
+            "Sid": "AllowViewAccountInfo"
+        },
+        {
+            "Action": [
+                "iam:ChangePassword",
+                "iam:GetUser"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:user/${aws:username}",
+            "Sid": "AllowManageOwnPasswords"
+        },
+        {
+            "Action": [
+                "iam:CreateAccessKey",
+                "iam:DeleteAccessKey",
+                "iam:ListAccessKeys",
+                "iam:UpdateAccessKey"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:user/${aws:username}",
+            "Sid": "AllowManageOwnAccessKeys"
+        },
+        {
+            "Action": [
+                "iam:CreateVirtualMFADevice",
+                "iam:DeleteVirtualMFADevice"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:mfa/${aws:username}",
+            "Sid": "AllowManageOwnVirtualMFADevice"
+        },
+        {
+            "Action": [
+                "iam:DeactivateMFADevice",
+                "iam:EnableMFADevice",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:user/${aws:username}",
+            "Sid": "AllowManageOwnUserMFA"
+        },
+        {
+            "Condition": {
+                "BoolIfExists": {
+                    "aws:MultiFactorAuthPresent": "false"
+                }
+            },
+            "Effect": "Deny",
+            "NotAction": [
+                "iam:CreateVirtualMFADevice",
+                "iam:EnableMFADevice",
+                "iam:GetUser",
+                "iam:ListMFADevices",
+                "iam:ListVirtualMFADevices",
+                "iam:ResyncMFADevice",
+                "iam:ListUsers",
+                "iam:ChangePassword",
+                "sts:GetSessionToken"
+            ],
+            "Resource": "*",
+            "Sid": "DenyAllExceptListedIfNoMFA"
+        }
+    ],
+    "Version": "2012-10-17"
+}
