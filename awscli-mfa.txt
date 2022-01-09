@@ -91,6 +91,7 @@
 #!/bin/bash
 # Usage: source scriptname MFA-TOKEN-FROM-YOUR-MOBILE-DEVICE
 
+set -x
 AWS_ACCOUNT_ID=12345678
 MFA_ARN=arn:aws:iam::$AWS_ACCOUNT_ID:mfa/cloudgeeks
 AWS_DEFAULT_REGION="us-east-1"
@@ -132,5 +133,5 @@ export AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
 
 export AWS_PROFILE=${AWS_PROFILE}
 
-
+set +x
 # END
