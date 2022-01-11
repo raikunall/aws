@@ -8,7 +8,7 @@ export OVPN_DATA
 
 echo -e "\nMust type -----> no <------ in small letters, otherswise existing data will be lost from Database\n"
 
-docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
+docker run -v $OVPN_DATA:/etc/openvpn --rm -it quickbooks2018/openvpn ovpn_initpki
 
 sleep 1
 
