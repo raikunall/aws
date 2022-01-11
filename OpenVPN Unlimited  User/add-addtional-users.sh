@@ -16,7 +16,7 @@ read -p "Please Provide Your Client Name " CLIENTNAME
 
 echo -e "\nI am adding a client with name $CLIENTNAME\n"
 
-#docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full $CLIENTNAME nopass
+#docker run -v $OVPN_DATA:/etc/openvpn --rm -it quickbooks2018/openvpn easyrsa build-client-full $CLIENTNAME nopass
 
 docker run -v $OVPN_DATA:/etc/openvpn --rm -it quickbooks2018/openvpn easyrsa build-client-full $CLIENTNAME
 
