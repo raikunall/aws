@@ -92,7 +92,7 @@
 # Usage: source scriptname MFA-TOKEN-FROM-YOUR-MOBILE-DEVICE
 
 set -x
-AWS_ACCOUNT_ID=12345678
+AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 MFA_ARN=arn:aws:iam::$AWS_ACCOUNT_ID:mfa/cloudgeeks
 AWS_DEFAULT_REGION="us-east-1"
 AWS_PROFILE="cloudgeeks"
