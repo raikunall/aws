@@ -1,3 +1,4 @@
+# https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/17.21.0/submodules/node_groups
 
 What is the difference between node_groups and worker_groups?
 node_groups are AWS-managed node groups (configures "Node Groups" that you can find on the EKS dashboard). This system is supposed to ease some of the lifecycle around upgrading nodes. Although they do not do this automatically and you still need to manually trigger the updates.
