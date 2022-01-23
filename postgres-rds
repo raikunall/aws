@@ -18,6 +18,12 @@ docker run --name postgres -e POSTGRES_PASSWORD=password -id postgres
 
 psql --host=cloudgeeks-postgres-us-east-1.rds.amazonaws.com --port=5432 --username=dbadmin  --password --dbname=postgres
 
+
+psql --host postgres.muhammad-asim.tk \
+  --port 5444 \
+  --username postgres \
+  --password
+
 # List databases
 
 \l
