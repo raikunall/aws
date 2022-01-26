@@ -9,6 +9,9 @@ Select * FROM api_keys
 limit 10
 
 
+# Read Only Permissions
+https://stackoverflow.com/questions/760210/how-do-you-create-a-read-only-user-in-postgresql
+
 # Create a Connection
 # connection-name anynameyouwant
 #username asim
