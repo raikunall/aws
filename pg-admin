@@ -2,6 +2,13 @@
 
 docker run --name pgadmin -e PGADMIN_DEFAULT_EMAIL="quickbooks2018@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="asimarain" --network="postgres" -p 8090:80 -id dpage/pgadmin4:latest
 
+#############################
+# Query Tool Select Database
+#############################
+Select * FROM api_keys
+limit 10
+
+
 # Create a Connection
 # connection-name anynameyouwant
 #username asim
