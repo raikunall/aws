@@ -14,6 +14,8 @@ psql \
 # postgres CLI Client
 ######################
 
+docker run --name postgres -v $PWD/postgres:/root -w /root -e POSTGRES_PASSWORD=password -id postgres 
+
 docker run --name postgres -e POSTGRES_PASSWORD=password -id postgres
 
 psql --host=cloudgeeks-postgres-us-east-1.rds.amazonaws.com --port=5432 --username=dbadmin  --password --dbname=postgres
