@@ -15,7 +15,7 @@ plugin "aws" {
 
 EOF
 
-tflinit --init
+tflint --init
 
 # End
 
