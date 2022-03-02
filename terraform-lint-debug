@@ -23,4 +23,4 @@ tflint --init
 
 # tflinit --init
 
-# tflinit  # this will validate your terraform code
+# tflinit  # this will validate your terraform code Note: this will work only with resource section not with modules
