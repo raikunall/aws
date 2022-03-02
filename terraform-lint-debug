@@ -2,6 +2,9 @@
 # https://github.com/terraform-linters/tflint
 # https://github.com/terraform-linters/tflint
 
+# Installation
+
+curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
 cat << EOF > .tflint.hcl
 plugin "aws" {
