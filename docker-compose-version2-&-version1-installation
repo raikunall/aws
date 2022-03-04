@@ -26,7 +26,7 @@
   
   # Commands
   # Build a Specific Profile
-  docker compose -p app up -d --build
+ #  docker compose -p app up -d --build
 
 ###########################
 # Docker Compose Version 1
