@@ -59,3 +59,14 @@ mv ./kind /usr/local/bin
 # kubectl port-forward service/blue-service --address 0.0.0.0 11000:80 -n default
 
 #END
+
+# kind create cluster --config hack/kind-config.yaml --image=kindest/node:v1.17.2
+cat << EOF > kind-config.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: "0.0.0.0"
+  apiServerPort: 7443
+EOF  
+  
+ 
