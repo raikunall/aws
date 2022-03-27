@@ -4,7 +4,7 @@
 # https://github.com/aws/eks-charts
 # https://github.com/aws/eks-charts/tree/master/stable/aws-load-balancer-controller
 
-EksCluster="cloudgeeksca-cluster-eks"
+EksCluster="cloudgeeks-eks-dev"
 Region="us-east-1"
 VpcId=`aws ec2 describe-vpcs --region us-east-1 --filters Name=tag:eksctl.cluster.k8s.io/v1alpha1/cluster-name,Values=cloudgeeks-ca-eks --query Vpcs[].VpcId | grep -i vpc | cut -f1`
 
