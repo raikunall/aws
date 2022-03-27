@@ -6,7 +6,8 @@
 
 EKS_CLUSTER="cloudgeeks-eks-dev"
 REGION="us-east-1"
-AWS_ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text)"
+AWS_ACCOUNT_ID="602401143452"
+# https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html
 VPC="vpc-0727e79dd350a3dbc"
 
 export EKS_CLUSTER
