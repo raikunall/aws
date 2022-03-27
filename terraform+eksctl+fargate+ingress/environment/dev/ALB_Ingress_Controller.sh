@@ -15,11 +15,6 @@ export REGION
 export AWS_ACCOUNT_ID
 export VPC
 
-
-# Regex Windows Git Bash
-#VpcId=`aws ec2 describe-vpcs --region us-east-1 --filters Name=tag:eksctl.cluster.k8s.io/v1alpha1/cluster-name,Values=cloudgeeks-ca-eks --query Vpcs[].VpcId | grep -i vpc | awk -F '"' '{print $2}'`
-# Install the AWS Load Balancer Controller using Helm
-
 helm version --short
 
 helm repo add eks https://aws.github.io/eks-charts
