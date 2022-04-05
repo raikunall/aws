@@ -3,3 +3,9 @@
 ssh -i ubuntu.pem -N -L 8888:127.0.0.1:80 ubuntu@IP
 
 localhost:8888
+
+or 
+
+ssh -N -L 9000:127.0.0.1:8443 cloud_user@d8d0041c.mylabserver.com
+
+localhost:9000
