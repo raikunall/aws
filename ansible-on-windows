@@ -2,4 +2,18 @@ docker run --name ansible --network host -w /root -v "c:/users/Muhammad Asim/Des
 
 docker exec -it ansible bash
 
-apt update -y && apt install -y ansible curl unzip awscli jq telnet netcat
+apt update -y \
+&& apt install -y ansible curl unzip awscli jq telnet netcat \
+&& curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+&& chmod +x ./kubectl \
+&& mv ./kubectl /usr/bin/kubectl
+&& curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
+&& chmod 700 get_helm.sh \
+&& ./get_helm.sh \
+&& rm -f get_helm.sh \
+&& curl -LO -# https://github.com/weaveworks/eksctl/releases/download/v0.94.0-rc.0/eksctl_Linux_amd64.tar.gz \
+&& tar -xzvf eksctl_Linux_amd64.tar.gz \
+&& rm -f eksctl_Linux_amd64.tar.gz \
+&& mv eksctl /usr/local/bin
+
+
