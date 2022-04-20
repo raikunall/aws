@@ -18,7 +18,7 @@ apt update -y \
 && curl -# -LO https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_amd64.zip \
 && unzip terraform_1.1.8_linux_amd64.zip \
 && rm -f terraform_1.1.8_linux_amd64.zip \
-&& mv terraform /usrl/local/bin \
+&& mv terraform /usr/local/bin \
 && curl -# -LO https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.7/terragrunt_linux_amd64 \
 && mv terragrunt_linux_amd64 terragrunt \
 && chmod +x terragrunt \
