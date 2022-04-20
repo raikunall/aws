@@ -1,1 +1,3 @@
+docker run --name ansible --network host -w /root -v "c:/users/Muhammad Asim/Desktop/ansible:/root" -id python:slim
+
 docker run --name kubernetes --network host -w /root -v "c:/users/Muhammad Asim/Desktop/kubernetes:/root" -id python:slim
