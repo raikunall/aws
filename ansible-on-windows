@@ -12,10 +12,8 @@ apt update -y \
 && curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
 && chmod 700 get_helm.sh \
 && ./get_helm.sh \
-&& rm -f get_helm.sh \
 && curl -# -LO -# https://github.com/weaveworks/eksctl/releases/download/v0.94.0-rc.0/eksctl_Linux_amd64.tar.gz \
 && tar -xzvf eksctl_Linux_amd64.tar.gz \
-&& rm -f eksctl_Linux_amd64.tar.gz \
 && mv eksctl /usr/local/bin \
 && curl -# -LO https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_amd64.zip \
 && unzip terraform_1.1.8_linux_amd64.zip \
@@ -26,7 +24,6 @@ apt update -y \
 && mv terragrunt /usr/local/bin \
 && curl -LO -# https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb \
 && dpkg -i ripgrep_13.0.0_amd64.deb \
-rm -f ripgrep_13.0.0_amd64.deb  \
 && apt install -y exa \
 && rm -rf *
 
