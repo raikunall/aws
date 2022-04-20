@@ -11,9 +11,18 @@ apt update -y \
 && chmod 700 get_helm.sh \
 && ./get_helm.sh \
 && rm -f get_helm.sh \
-&& curl -LO -# https://github.com/weaveworks/eksctl/releases/download/v0.94.0-rc.0/eksctl_Linux_amd64.tar.gz \
+&& curl -# -LO -# https://github.com/weaveworks/eksctl/releases/download/v0.94.0-rc.0/eksctl_Linux_amd64.tar.gz \
 && tar -xzvf eksctl_Linux_amd64.tar.gz \
 && rm -f eksctl_Linux_amd64.tar.gz \
-&& mv eksctl /usr/local/bin
+&& mv eksctl /usr/local/bin \
+&& curl -# -LO https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_amd64.zip \
+&& unzip terraform_1.1.8_linux_amd64.zip \
+&& rm -f terraform_1.1.8_linux_amd64.zip \
+&& mv terraform /usrl/local/bin \
+&& curl -# -LO https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.7/terragrunt_linux_amd64 \
+&& mv terragrunt_linux_amd64 terragrunt \
+&& chmod +x terragrunt \
+&& mv terragrunt /usr/local/bin
+
 
 
