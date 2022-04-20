@@ -1,5 +1,7 @@
 docker run --name ansible --network host -w /root -v "c:/users/Muhammad Asim/Desktop/ansible:/root" -id python:slim
 
+# https://github.com/ibraheemdev/modern-unix
+
 docker exec -it ansible bash
 
 apt update -y \
@@ -22,7 +24,11 @@ apt update -y \
 && curl -# -LO https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.7/terragrunt_linux_amd64 \
 && mv terragrunt_linux_amd64 terragrunt \
 && chmod +x terragrunt \
-&& mv terragrunt /usr/local/bin
+&& mv terragrunt /usr/local/bin \
+&& curl -LO -# https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb \
+&& dpkg -i ripgrep_13.0.0_amd64.deb \
+rm -f ripgrep_13.0.0_amd64.deb # rg --help \
+&& apt install -y exa # exa -l (gives colored output)
 
 
 
