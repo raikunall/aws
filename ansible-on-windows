@@ -27,8 +27,8 @@ apt update -y \
 && mv terragrunt /usr/local/bin \
 && curl -LO -# https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb \
 && dpkg -i ripgrep_13.0.0_amd64.deb \
-rm -f ripgrep_13.0.0_amd64.deb # rg --help \
-&& apt install -y exa # exa -l (gives colored output)
+rm -f ripgrep_13.0.0_amd64.deb  \
+&& apt install -y exa
 
 
 
