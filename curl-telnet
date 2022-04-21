@@ -1,3 +1,0 @@
-# https://www.unixtutorial.org/test-tcp-connectivity-with-curl/
-
-curl -v telnet://127.0.0.1:22
