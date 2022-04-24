@@ -13,6 +13,9 @@ helm template dirname
 helm template -f env.yaml helloworld 
 
  helm template -f env.yaml ./
+ 
+ helm template -f helloworld/env.yaml helloworld/
+ 
  helm upgrade --install nginx-alpine -f custom-values.yaml -f env.yaml ./ --namespace default --create-namespace
 
 
