@@ -5,7 +5,7 @@ docker run --name ansible --network host -w /mnt -v "c:/users/Muhammad Asim/Desk
 docker exec -it ansible bash
 
 apt update -y \
-&& apt install -y ansible curl zip unzip awscli jq telnet netcat net-tools dos2unix git vim nano iputils-ping ssh \
+&& apt install -y ansible curl zip unzip awscli jq telnet netcat net-tools dos2unix git vim nano iputils-ping \
 && curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
 && chmod +x ./kubectl \
 && mv ./kubectl /usr/bin/kubectl \
@@ -25,7 +25,6 @@ apt update -y \
 && curl -LO -# https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb \
 && dpkg -i ripgrep_13.0.0_amd64.deb \
 && apt install -y exa \
-&& /etc/init.d/ssh start \
 && rm -rf *
 
 
