@@ -86,3 +86,47 @@ helm install -f helloworld/env.yaml helloworld  --debug --dry-run --generate-nam
              # release-name
 helm rollback nginx-alpine 1
 
+
+# Helm Secrets
+# https://www.youtube.com/watch?v=FriVNkaEU8Q
+
+https://github.com/mozilla/sops/releases
+
+curl -LO -# https://github.com/mozilla/sops/releases/download/v3.7.2/sops-v3.7.2.linux.amd64
+
+mv sops-v3.7.2.linux.amd64 sops
+mv sops /usr/local/bin
+
+# Modern encryption tool age
+https://github.com/FiloSottile/age
+
+apt install -y age
+
+age-keygen -o key.txt
+
+mkdir -p ~/.config/sops/age
+
+mv key.txt ~/.config/sops/age/keys.txt
+
+# this will create default encryption rules  # copy public key from key.txt age1z03hnu6s5a37hahytvl8y7zme669r47p0yz2zwfss5quz3t83sgs23n5ha
+cat << EOF > .sops.yaml
+creation_rules:
+  -  age: age1z03hnu6s5a37hahytvl8y7zme669r47p0yz2zwfss5quz3t83sgs23n5ha
+
+EOF
+
+cat << EOF > values.secrets.yaml
+envmap:
+ - name: "USERNAME"
+   value: "test1"
+ - name: "PASSWORD"
+   value: "test2" 
+
+EOF   
+
+helm secrets enc values.secrets.yaml
+
+                       # release-name
+helm upgrade --install nginx-alpine   --values secrets://values.secrets.yaml
+
+
