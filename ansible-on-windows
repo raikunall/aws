@@ -29,3 +29,12 @@ apt update -y \
 
 
 
+# Ansible specific version installation
+cat << EOF > /root/requirements.txt
+ansible==5.6.0
+EOF
+
+cd /root
+pip3 install -r requirements.txt
+
+ansible --version
