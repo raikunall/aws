@@ -116,13 +116,9 @@ creation_rules:
 EOF
 
 cat << EOF > values.secrets.yaml
-envmap:
- - name: "USERNAME"
-   value: "test1"
- - name: "PASSWORD"
-   value: "test2" 
-
-EOF   
+username: root
+password: password
+EOF
 
 #########
 # Encrypt
