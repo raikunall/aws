@@ -142,3 +142,21 @@ export GPG_TTY=$(tty) # incase of error
 helm upgrade --install nginx-alpine   --values secrets://values.secrets.yaml
 
 
+helm ---> templates ---> secrets.yaml
+cat << EOF secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: credentials
+  labels:
+    app: app
+    chart: '{{ .Chart.Name }}-{{ .Chart.Version }}'
+    release: '{{ .Release.Name }}'
+    heritage: '{{ .Release.Service }}'
+type: Opaque
+data:
+  password: {{ .Values.password | b64enc | quote }}
+  
+EOF
+
+
