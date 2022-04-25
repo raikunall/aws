@@ -198,6 +198,11 @@ spec:
               secretKeyRef:
                 name: credentials
                 key: password
+          - name: MY_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: credentials
+                key: username
           ports:
             - name: http
               containerPort: 80
