@@ -79,3 +79,10 @@ helm install nginx-alpine -f helloworld/env.yaml helloworld  --debug --dry-run
 helm install -f helloworld/env.yaml helloworld  --debug --dry-run 
 
 helm install -f helloworld/env.yaml helloworld  --debug --dry-run --generate-name
+
+###########
+# Rollback
+###########
+             # release-name
+helm rollback nginx-alpine 1
+
