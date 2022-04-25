@@ -86,9 +86,9 @@ helm install -f helloworld/env.yaml helloworld  --debug --dry-run --generate-nam
              # release-name
 helm rollback nginx-alpine 1
 
-
+##############
 # Helm Secrets
-# https://www.youtube.com/watch?v=FriVNkaEU8Q
+###############
 
 https://github.com/mozilla/sops/releases
 
