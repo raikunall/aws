@@ -89,7 +89,7 @@ helm rollback nginx-alpine 1
 ##############
 # Helm Secrets
 ##############
-
+SOPS is an editor of encrypted files that supports YAML, JSON, ENV, INI and BINARY formats and encrypts with AWS KMS, GCP KMS, Azure Key Vault, age, and PGP
 https://github.com/mozilla/sops/releases
 
 curl -LO -# https://github.com/mozilla/sops/releases/download/v3.7.2/sops-v3.7.2.linux.amd64
@@ -97,8 +97,9 @@ curl -LO -# https://github.com/mozilla/sops/releases/download/v3.7.2/sops-v3.7.2
 mv sops-v3.7.2.linux.amd64 sops
 mv sops /usr/local/bin
 
-# Modern encryption tool age
+# Modern encryption tool age (AGE)
 https://github.com/FiloSottile/age
+age is a simple, modern and secure file encryption tool, format, and Go library.
 
 apt install -y age
 
