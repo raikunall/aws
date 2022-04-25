@@ -134,6 +134,8 @@ helm secrets enc values.secrets.yaml
 #########
 helm secrets dec values.secrets.yaml
 
+helm secrets view values.secrets.yaml
+
                        # release-name
 helm upgrade --install nginx-alpine   --values secrets://values.secrets.yaml
 
