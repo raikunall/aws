@@ -88,7 +88,7 @@ helm rollback nginx-alpine 1
 
 ##############
 # Helm Secrets
-###############
+##############
 
 https://github.com/mozilla/sops/releases
 
