@@ -124,7 +124,15 @@ envmap:
 
 EOF   
 
+#########
+# Encrypt
+##########
 helm secrets enc values.secrets.yaml
+
+#########
+# Decrypt
+#########
+helm secrets dec values.secrets.yaml
 
                        # release-name
 helm upgrade --install nginx-alpine   --values secrets://values.secrets.yaml
