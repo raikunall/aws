@@ -136,6 +136,8 @@ helm secrets dec values.secrets.yaml
 
 helm secrets view values.secrets.yaml
 
+export GPG_TTY=$(tty) # incase of error
+
                        # release-name
 helm upgrade --install nginx-alpine   --values secrets://values.secrets.yaml
 
