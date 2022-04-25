@@ -237,3 +237,5 @@ EOF
 # Helm command for secrets deployment
 ######################################
 helm secrets install nginx-alpine ./ -f values.yaml -f values.secrets.yaml --namespace learning --create-namespace
+
+helm secrets upgrade --install nginx-alpine ./ -f values.yaml -f values.secrets.yaml --namespace learning --create-namespace
