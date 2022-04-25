@@ -117,7 +117,7 @@ EOF
 
 cat << EOF > values.secrets.yaml
 username: root
-password: password
+password: 12345678
 EOF
 
 #########
