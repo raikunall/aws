@@ -136,13 +136,12 @@ helm secrets view values.secrets.yaml
 
 export GPG_TTY=$(tty) # incase of error
 
-                       # release-name
-helm upgrade --install nginx-alpine   --values secrets://values.secrets.yaml
-
+# Sample Release
+helm create nginx-alpine
 
 helm ---> templates ---> secrets.yaml
 
-cat << EOF secrets.yaml
+cat << EOF > secrets.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -160,7 +159,7 @@ data:
 EOF
 
 # Reference in deployment
-cat << EOF deployment.yaml
+cat << EOF > deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
