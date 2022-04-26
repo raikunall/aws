@@ -95,6 +95,7 @@ https://github.com/mozilla/sops/releases
 curl -LO -# https://github.com/mozilla/sops/releases/download/v3.7.2/sops-v3.7.2.linux.amd64
 
 mv sops-v3.7.2.linux.amd64 sops
+chmod +x sops
 mv sops /usr/local/bin
 
 # Modern encryption tool age (AGE)
