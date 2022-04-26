@@ -137,7 +137,7 @@ helm secrets view values.secrets.yaml
 export GPG_TTY=$(tty) # incase of error
 
 # Sample Release
-helm create nginx-alpine
+helm create hello
 
 helm ---> templates ---> secrets.yaml
 
