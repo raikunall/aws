@@ -113,7 +113,7 @@ mv key.txt ~/.config/sops/age/keys.txt
 # this will create default encryption rules  # copy public key from key.txt age1z03hnu6s5a37hahytvl8y7zme669r47p0yz2zwfss5quz3t83sgs23n5ha
 cat << EOF > .sops.yaml
 creation_rules:
-  -  age: age1z03hnu6s5a37hahytvl8y7zme669r47p0yz2zwfss5quz3t83sgs23n5ha
+  -  age: age1zq6mygn07kzvt2ar435ea2jvy9pg52ta5zczjeq0kmjzw8cv0vcqr3hl0t
 
 EOF
 
