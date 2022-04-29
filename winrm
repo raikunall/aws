@@ -1,0 +1,3 @@
+apt search winrm
+
+apt install -y golang-github-packer-community-winrmcp-dev
