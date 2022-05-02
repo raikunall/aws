@@ -86,6 +86,11 @@ helm install -f helloworld/env.yaml helloworld  --debug --dry-run --generate-nam
              # release-name
 helm rollback nginx-alpine 1
 
+#########
+# History
+#########
+helm history release-name
+
 ##############
 # Helm Secrets
 ##############
