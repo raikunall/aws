@@ -141,7 +141,19 @@ helm secrets view values.secrets.yaml
 
 export GPG_TTY=$(tty) # incase of error
 
+################
+# Helm NOTES.txt
+################
+cat << EOF > NOTES.txt
+deployment command
+helm upgrade --install nginx-alpine ./ --namespace learning --create-namespace
+helm release name {{ .Release.Name }}
+helm chart name {{ .Chart.Name }}
+EOF
+
+#################
 # Sample Release
+#################
 helm create hello
 
 helm ---> templates ---> secrets.yaml
