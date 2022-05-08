@@ -26,7 +26,8 @@ apt update -y \
 && dpkg -i ripgrep_13.0.0_amd64.deb \
 && apt install -y exa \
 && ansible-galaxy collection install amazon.aws \
-&& pip3 install boto3
+&& pip3 install boto3 \
+&& ansible-galaxy collection install amazon.aws \
 && rm -rf *
 
 
