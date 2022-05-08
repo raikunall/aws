@@ -28,6 +28,8 @@ apt update -y \
 && ansible-galaxy collection install amazon.aws \
 && pip3 install boto3 \
 && ansible-galaxy collection install amazon.aws \
+&& apt install -y python3-boto3 \
+&& apt install -y python3-botocore \
 && rm -rf *
 
 
