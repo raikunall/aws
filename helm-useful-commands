@@ -26,7 +26,9 @@ helm template -f env.yaml helloworld
 # https://github.com/databus23/helm-diff
 helm plugin install https://github.com/databus23/helm-diff 
 
-helm diff release-name 1 2
+helm diff revision release-name 1 2
+
+helm diff revision hello 1 2 -n learning
 
 hub wordpress  --max-col-width=0  | grep -i bitnami/wordpress
 helm repo add bitnami https://charts.bitnami.com/bitnami
