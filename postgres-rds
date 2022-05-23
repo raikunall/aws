@@ -30,5 +30,16 @@ psql --host postgres.muhammad-asim.tk \
 
 \l
 
+# https://support.huaweicloud.com/intl/en-us/usermanual-rds/rds_09_0023.html
+
+#######
 # Dump
+#######
 pg_dump -h <public dns> -p <port> -U <my username> -f <name of dump file .sql> <name of my database>
+
+########
+# Import 
+########
+psql --host=<RDS_ADDRESS> --port=<DB_PORT> --username=root --dbname=postgres -c "create database <DB_NAME>;"
+
+psql --host=<RDS_ADDRESS> --port=<DB_PORT> --username=root --dbname=<DB_NAME> --file=<BACKUP_DIR>/backup.sql
