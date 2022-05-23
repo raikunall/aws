@@ -1,0 +1,8 @@
+# https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
+
+Use growpart for ext4
+                
+lsblk
+               #disk       #partition number
+sudo growpart /dev/nvme0n1 1
+
