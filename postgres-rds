@@ -29,3 +29,6 @@ psql --host postgres.muhammad-asim.tk \
 # List databases
 
 \l
+
+# Dump
+pg_dump -h <public dns> -p <port> -U <my username> -f <name of dump file .sql> <name of my database>
