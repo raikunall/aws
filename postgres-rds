@@ -50,3 +50,18 @@ psql --host=<RDS_ADDRESS> --port=<DB_PORT> --username=root --dbname=<DB_NAME> --
 Then, this shows all tables in the current schema:
 
 \dt
+
+###########################################
+# Existing database migration to other RDS
+###########################################
+# https://stackoverflow.com/questions/54046054/cannot-restore-postgresql-databases-got-database-already-exists-error
+
+# Export 
+# pg_dump
+pg_dump -v -Fc -h RDS_END_POINT -p 5432 -U USERNAME -f BACKUP-05-24-2022.sql DB_NAME
+
+
+# Import
+# pg_restore
+pg_restore -vcC -h RDS_END_POINT -p 5432 -U USERNAME -d DB_NAME < BACKUP-05-24-2022.sql
+
