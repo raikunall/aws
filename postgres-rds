@@ -30,6 +30,13 @@ psql --host postgres.muhammad-asim.tk \
 
 \l
 
+###############################
+# Drop DATABASE BEFORE RESTORE
+###############################
+
+# https://phoenixnap.com/kb/postgresql-drop-database#:~:text=The%20first%20method%20to%20remove,execute%20the%20DROP%20DATABASE%20command.
+DROP DATABASE IF EXISTS <database name>;
+
 #######################################################################################################
 # Best is to create a backup & restore from PGADMIN ---> backup location ---> /var/lig/pgadmin/storage
 #######################################################################################################
