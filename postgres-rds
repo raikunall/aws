@@ -30,6 +30,10 @@ psql --host postgres.muhammad-asim.tk \
 
 \l
 
+#######################################################################################################
+# Best is to create a backup & restore from PGADMIN ---> backup location ---> /var/lig/pgadmin/storage
+#######################################################################################################
+
 # https://support.huaweicloud.com/intl/en-us/usermanual-rds/rds_09_0023.html
 
 #######
