@@ -1,6 +1,6 @@
 ### PGADMIN
 
-docker run --name pgadmin -e PGADMIN_DEFAULT_EMAIL="quickbooks2018@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="asimarain" --network="postgres" -p 8090:80 -id dpage/pgadmin4:latest
+docker run --name pgadmin -e PGADMIN_DEFAULT_EMAIL="quickbooks2018@gmail.com" -e PGADMIN_DEFAULT_PASSWORD="asimarain" -p 8090:80 -id dpage/pgadmin4:latest
 
 #############################
 # Query Tool Select Database
