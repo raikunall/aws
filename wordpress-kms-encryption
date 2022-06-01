@@ -70,6 +70,36 @@ aws kms decrypt --region us-east-1 --ciphertext-blob fileb://id_rsa_encrypted --
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "KeyActions",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:ListGrants"
+            ],
+            "Resource": "arn:aws:kms:us-east-1:12345678:key/abcdefaghe"
+        },
+        {
+            "Sid": "KMSActions",
+            "Effect": "Allow",
+            "Action": [
+                "kms:ListKeys",
+                "kms:ListAliases"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
