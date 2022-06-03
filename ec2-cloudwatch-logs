@@ -4,10 +4,17 @@
 
 
 export REGION=us-east-1
+
+-----------
+# App1 logs
+-----------
 export APPLICATION_LOGS=/opt/myapp.log
 export LOG_GROUP_NAME=myapp-asim
 export LOG_STREAM_NAME=myapp-asim-stream
 
+-----------
+# App2 logs
+-----------
 export APPLICATION_LOGS2=/opt/myapp2.log
 export LOG_GROUP_NAME2=myapp-asim2
 export LOG_STREAM_NAME2=myapp-asim-stream2
@@ -55,3 +62,9 @@ EOF
 
 # Command to Start CloudWatch Service
 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
+
+
+systemctl enable amazon-cloudwatch-agent.service
+
+
+# End
