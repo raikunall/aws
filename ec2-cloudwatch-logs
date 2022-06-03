@@ -8,6 +8,10 @@ export APPLICATION_LOGS=/opt/myapp.log
 export LOG_GROUP_NAME=myapp-asim
 export LOG_STREAM_NAME=myapp-asim-stream
 
+export APPLICATION_LOGS2=/opt/myapp2.log
+export LOG_GROUP_NAME2=myapp-asim2
+export LOG_STREAM_NAME2=myapp-asim-stream2
+
 ############################
 # Cloudwatch Ubuntu Package
 ############################
@@ -32,7 +36,13 @@ cat <<EOF > /opt/aws/amazon-cloudwatch-agent/bin/config.json
                          "file_path": "${APPLICATION_LOGS}",
                          "log_group_name": "${LOG_GROUP_NAME}",
                          "log_stream_name": "${LOG_STREAM_NAME}"
-                     }
+                     },
+
+                       {
+                          "file_path": "${APPLICATION_LOGS2}",
+                          "log_group_name": "${LOG_GROUP_NAME2}",
+                          "log_stream_name": "${LOG_STREAM_NAME2}"
+                        }
                  ]
              }
          }
