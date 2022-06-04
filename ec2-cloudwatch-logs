@@ -8,20 +8,20 @@ export REGION=us-east-1
 -----------
 # App1 logs
 -----------
-export APPLICATION_LOGS=/opt/myapp.log
+export APPLICATION_LOGS=/var/log/myapp.log
 export LOG_GROUP_NAME=myapp-asim
 export LOG_STREAM_NAME=myapp-asim-stream
 
 -----------
 # App2 logs
 -----------
-export APPLICATION_LOGS2=/opt/myapp2.log
+export APPLICATION_LOGS2=/var/log/myapp2.log
 export LOG_GROUP_NAME2=myapp-asim2
 export LOG_STREAM_NAME2=myapp-asim-stream2
 
-############################
+---------------------------
 # Cloudwatch Ubuntu Package
-############################
+---------------------------
 curl -LO -# https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 
 sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
@@ -60,10 +60,14 @@ cat <<EOF > /opt/aws/amazon-cloudwatch-agent/bin/config.json
 
 EOF
 
-# Command to Start CloudWatch Service
+--------------------------
+# CloudWatch Service Start
+---------------------------
 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
 
-
+----------------------------
+# CloudWatch Service Enable
+----------------------------
 systemctl enable amazon-cloudwatch-agent.service
 
 
