@@ -1,5 +1,6 @@
 #!/bin/bash
 # OS: Ubuntu
+# DevOps: cloudgeeks.ca
 # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/download-cloudwatch-agent-commandline.html
 
 
@@ -8,16 +9,16 @@ export REGION=us-east-1
 -----------
 # App1 logs
 -----------
-export APPLICATION_LOGS=/var/log/myapp.log
-export LOG_GROUP_NAME=myapp-asim
-export LOG_STREAM_NAME=myapp-asim-stream
+export APPLICATION_LOGS=/var/log/cloudgeeksapp1.log
+export LOG_GROUP_NAME=cloudgeeks-app1
+export LOG_STREAM_NAME=cloudgeeks-app1-stream
 
 -----------
 # App2 logs
 -----------
-export APPLICATION_LOGS2=/var/log/myapp2.log
-export LOG_GROUP_NAME2=myapp-asim2
-export LOG_STREAM_NAME2=myapp-asim-stream2
+export APPLICATION_LOGS2=/var/log/cloudgeeksapp2.log
+export LOG_GROUP_NAME2=cloudgeeks-app2
+export LOG_STREAM_NAME2=cloudgeeks-app1-stream
 
 ---------------------------
 # Cloudwatch Ubuntu Package
