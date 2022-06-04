@@ -1,5 +1,5 @@
 #!/bin/bash
-# Ubuntu/Debian
+# OS: Ubuntu
 # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/download-cloudwatch-agent-commandline.html
 
 
