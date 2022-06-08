@@ -13,8 +13,11 @@ psql \
 ######################
 # postgres CLI Client
 ######################
+# Windows
+docker run --name postgres -w /root -e POSTGRES_PASSWORD=password -v "c:/users/Muhammad Asim/Desktop/postgres:/root" -id postgres:latest
 
-docker run --name postgres -v $PWD/postgres:/root -w /root -e POSTGRES_PASSWORD=password -id postgres 
+# Linux
+docker run --name postgres -v $PWD/postgres:/root -w /root -e POSTGRES_PASSWORD=password -id postgres:latest
 
 docker run --name postgres -e POSTGRES_PASSWORD=password -id postgres
 
