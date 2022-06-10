@@ -16,6 +16,8 @@ cat << EOF > /etc/docker/daemon.json
   }
 }
 
+EOF
+
 
 
 
