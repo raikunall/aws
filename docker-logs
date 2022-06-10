@@ -4,6 +4,19 @@ docker does not limit the file size for logging, over time this will become mass
 
 docker run --name nginx --log-opt max-size=20m --log-opt max-file=10 -id nginx:latest
 
+------------------------------------------
+# For existing containers already running
+------------------------------------------
+cat << EOF > /etc/docker/daemon.json
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "1024m",
+    "max-file": "50"
+  }
+}
+
+docker restart nginx
 
 
 # https://hub.docker.com/r/linkyard/logrotate
