@@ -4,11 +4,9 @@ docker does not limit the file size for logging, over time this will become mass
 
 docker run --name nginx --log-driver json-file --log-opt max-size=20m --log-opt max-file=10 -id nginx:latest
 
-------------------------------------------------------------
-# For existing container restart docker & restart containers
-------------------------------------------------------------
-# https://github.com/docker/cli/issues/1148#issuecomment-645990725
-
+-------------------------------------------------------------------------------------------------
+# For existing container restart docker & restart containers it will not work, recreate required
+-------------------------------------------------------------------------------------------------
 example:
 docker run --name nginx -id nginx:latest
 
@@ -27,6 +25,11 @@ systemctl restart docker
 
 docker restart nginx
 
+docker rm -f nginx
+
+docker run --name nginx -id nginx:latest
+
+## https://github.com/docker/cli/issues/1148#issuecomment-645990725
 
 
 
