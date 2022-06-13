@@ -1,5 +1,8 @@
 # https://www.youtube.com/watch?v=pDQzadfUfpE
 
+# ansible
+# https://docs.ansible.com/ansible/2.5/modules/docker_container_module.html
+
 docker does not limit the file size for logging, over time this will become massive example 100GB ---> docker automated way to enable log rotation for docker containers 
 
 docker run --name nginx --log-driver json-file --log-opt max-size=20m --log-opt max-file=10 -id nginx:latest
