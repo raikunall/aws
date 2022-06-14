@@ -1,0 +1,61 @@
+https://linkerd.io/2.11/getting-started/
+
+-------------------------
+# Linerd Cli Installation
+-------------------------
+
+curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
+
+ln -s /root/.linkerd2/bin/linkerd /usr/bin/linkerd
+
+ln -s /root/.linkerd2/bin/linkerd /usr/local/bin/linkerd
+
+
+linkerd version
+
+---------------------------------------------
+# Install the control plane onto your cluster
+---------------------------------------------
+linkerd install | kubectl apply -f -
+
+-----------------------------------------------------------------------------------------------
+# Let’s install the viz extension, which will install an on-cluster metric stack and dashboard.
+-----------------------------------------------------------------------------------------------
+
+linkerd viz install | kubectl apply -f - 
+
+linkerd check
+
+linkerd viz dashboard &
+
+------------
+# ssh tunnel
+---------------
+# Linkerd Panel
+----------------
+ssh -N -L 50750:0.0.0.0:50750 cloud_user@35.87.189.111
+
+----------
+# Demo App
+----------
+kubectl -n emojivoto port-forward svc/web-svc --address 0.0.0.0 8080:80
+
+ssh -N -L 8090:0.0.0.0:8080 cloud_user@35.87.189.111
+
+---------------
+# Mesh Demo App
+---------------
+kubectl get -n emojivoto deploy -o yaml \
+  | linkerd inject - \
+  | kubectl apply -f -
+
+------
+# mtls
+------
+https://linkerd.io/2.11/features/automatic-mtls/
+
+https://linkerd.io/2.11/tasks/validating-your-traffic/
+
+linkerd viz -n linkerd edges deployment
+
+linkerd viz -n linkerd tap deploy
