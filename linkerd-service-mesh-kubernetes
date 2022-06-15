@@ -47,6 +47,9 @@ ssh -N -L 50750:0.0.0.0:50750 cloud_user@35.87.189.111
 ----------
 # Demo App
 ----------
+curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/emojivoto.yml \
+  | kubectl apply -f -
+  
 kubectl -n emojivoto port-forward svc/web-svc --address 0.0.0.0 8080:80
 
 ssh -N -L 8090:0.0.0.0:8080 cloud_user@35.87.189.111
