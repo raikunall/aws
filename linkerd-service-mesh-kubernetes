@@ -12,8 +12,11 @@ https://linkerd.io/2.11/getting-started/
 
 curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
 
+
+# AmazonLinux
 ln -s /root/.linkerd2/bin/linkerd /usr/bin/linkerd
 
+# Ubuntu
 ln -s /root/.linkerd2/bin/linkerd /usr/local/bin/linkerd
 
 
