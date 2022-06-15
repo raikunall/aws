@@ -42,7 +42,7 @@ linkerd viz dashboard &
 ---------------
 # Linkerd Panel
 ----------------
-ssh -N -L 50750:0.0.0.0:50750 cloud_user@35.87.189.111
+ssh -N -L 50750:0.0.0.0:50750 cloud_user@54.183.212.37
 
 ----------
 # Demo App
