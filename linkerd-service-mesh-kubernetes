@@ -70,4 +70,8 @@ https://linkerd.io/2.11/tasks/validating-your-traffic/
 
 linkerd viz -n linkerd edges deployment
 
+linkerd viz edges deployment -A
+
 linkerd viz -n linkerd tap deploy
+
+kubectl -n linkerd rollout restart deployment linkerd-destination linkerd-identity linkerd-proxy-injector
