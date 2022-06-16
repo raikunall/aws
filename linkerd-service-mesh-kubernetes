@@ -77,3 +77,8 @@ linkerd viz edges deployment -A
 linkerd viz -n linkerd tap deploy
 
 kubectl -n linkerd rollout restart deployment linkerd-destination linkerd-identity linkerd-proxy-injector
+
+linkerd viz -n linkerd-viz tap deploy
+
+kubectl -n linkerd-viz rollout restart deployment grafana metrics-api prometheus tap tap-injector web
+
