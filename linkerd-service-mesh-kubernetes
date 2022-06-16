@@ -27,6 +27,8 @@ linkerd version
 ---------------------------------------------
 linkerd install | kubectl apply -f -
 
+linkerd install --set proxyInit.runAsRoot=true | kubectl apply -f -
+
 -----------------------------------------------------------------------------------------------
 # Let’s install the viz extension, which will install an on-cluster metric stack and dashboard.
 -----------------------------------------------------------------------------------------------
